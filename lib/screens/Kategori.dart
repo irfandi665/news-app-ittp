@@ -4,20 +4,20 @@ import 'dart:convert';
 
 import 'package:new_app/widgets/NewsTile.dart'; //Yup it has been imported here our new widget
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class kategori extends StatefulWidget {
+  const kategori({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<kategori> createState() => _kategoriState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _kategoriState extends State<kategori> {
   bool loading = true;
   List<Map<String, dynamic>> articles = [];
 
   Future<void> getNews() async {
     String url =
-        'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=3579f938d5c04ea8823b8ec1992eda65';
+        'https://newsapi.org/v2/everything?q=bitcoin&apiKey=3579f938d5c04ea8823b8ec1992eda65';
     var response = await http.get(Uri.parse(url));
     var jsonData = jsonDecode(response.body);
     if (jsonData['status'] == 'ok') {
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 10,
           ),
           Text(
-            "Berita Terbaru dari Seluruh Dunia",
+            "Kategori",
             textAlign: TextAlign.center,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),

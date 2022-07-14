@@ -1,4 +1,4 @@
-package com.example.myapppradeep.new_app
+package com.tubes.myapppradeep.postnews
 
 import io.flutter.embedding.android.FlutterActivity
 
